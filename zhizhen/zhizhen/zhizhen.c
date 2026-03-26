@@ -147,16 +147,154 @@
 //	return 0;
 //}
 
+//#include<stdio.h>
+//void swap(int * a, int* b) {
+//	int c = *a;
+//	*a = *b;
+//	*b = c;
+//}
+//int main() {
+//	int a = 10;
+//	int b = 20;
+//	swap(&a, &b);
+//	printf("%d %d", a, b);
+//	return 0;
+//}
+
+//#include<stdio.h>
+//int my_len(int arr1[]) {
+//	int c = sizeof(arr1) / sizeof(arr1[0]);
+//	return c;
+//}
+//int main() {
+//	int arr[] = { 1,2,3,4,5,6,7,8,9 };
+//	int len1 = sizeof(arr) / sizeof(arr[0]);
+//	int len2 = my_len(arr);
+//	printf("len1=%d\n", len1);
+//	printf("len2=%d\n", len2);
+//	return 0;
+//}
+
+//#include<stdio.h>
+//int main() {
+//	int a = 10;
+//	int* p = &a;
+//	int** pa = &p;
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//int main() {
+//	int a = 10;
+//	int b = 20;
+//	int c = 30;
+//	int* p[3];
+//	p[0] = &a;
+//	p[1] = &b;
+//	p[2] = &c;
+//	for (int i = 0; i < 3; i++) {
+//		printf("%d\n", *p[i]);
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+//int main() {
+//	int arr[5] = { 1,2,3,4,5 };
+//	int (*p)[5] = arr;
+//	for (int i = 0; i < 5; i++) {
+//		printf("%d\n", (*p)[i]);
+//	}
+//	return 0;
+//}
+
+//指针数组模拟二维数组
+//#include<stdio.h>
+//int main() {
+//	int arr1[3] = { 1,2,3 };
+//	int arr2[3] = { 2,3,4 };
+//	int arr3[3] = { 4,5,6 };
+//	int* p[3] = { arr1,arr2,arr3 };
+//	//arr1,arr2,arr3是数组首元素的地址类型是int*，可以放到int*p里
+//	for (int i = 0; i < 3; i++) {
+//		for (int j = 0; j < 3; j++) {
+//		 printf("%d ", (*(p+1))[j]);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+//数组指针模拟二维数组
+//#include<stdio.h>
+//int main() {
+//	int arr[3][5] = { {1,2,3},{2,3,4},{3,4,5} };
+//	int (*p)[5] = arr;
+//	for (int i = 0; i < 3; i++) {
+//		for (int j = 0; j < 5; j++) {
+//			printf("%d ", (*(p + i))[j]);
+//			//也可以写成（*(*(p + i))+j）
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+//int add(int a, int b) {
+//	int c = a + b;
+//	return c;
+//}
+//int main() {
+//	int (*p)(int x, int y)=add;
+//	int x = 10;
+//	int y = 30;
+//	printf("%d\n",(*p)(x, y));
+//	printf("%d\n",p(x, y));
+//	return 0;
+//}
+
 #include<stdio.h>
-void swap(int * a, int* b) {
-	int c = *a;
-	*a = *b;
-	*b = c;
+void mnue() {
+	printf("****************************\n");
+	printf("******1.add    2.sub  ******\n");
+	printf("******3.mul    4,div  ******\n");
+	printf("******     0.exit    *******\n");
+	printf("****************************\n");
+}
+int add(int a, int b) {
+	int c = a + b;
+	return c;
+}
+int sub(int a, int b) {
+	int c = a - b;
+	return c;
+}
+int mul(int a, int b) {
+	int c = a * b;
+	return c;
+}
+int div(int a, int b) {
+	int c = a / b;
+	return c;
 }
 int main() {
-	int a = 10;
-	int b = 20;
-	swap(&a, &b);
-	printf("%d %d", a, b);
+	int input=0,a,b;
+	int (*p[5])(int, int) = { NULL,add,sub,mul,div };
+	do {
+		mnue();
+		printf("请选择你想要的运算：\n");
+		scanf("%d", &input);
+		if (input == 0) break;
+		while (input < 0 || input>4) {
+			printf("请选择正确的数字:\n");
+			scanf("%d", &input);
+		}
+		printf("请输入你要计算的数字:\n");
+		scanf("%d %d", &a, &b);
+		int result = p[input](a, b);
+		printf("%d\n", result);
+	} while (input);
 	return 0;
 }
