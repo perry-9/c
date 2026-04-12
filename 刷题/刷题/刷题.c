@@ -819,41 +819,41 @@
 //}
 
 
-#include<stdio.h>
-void maopao(int arr[], int len) {
-	int last = 0;
-	int bord = len - 1;
-	while(bord>0)
-	 {
-		int npc = 1;
-		for (int j = 0; j < bord; j++) {
-			if (arr[j] > arr[j + 1]) {
-				int c = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = c;
-				npc = 0;
-				last = j;
-			}
-		}
-		bord = last;
-		if (npc == 1)break;
-	}
-}
-int main() {
-	int arr[100];
-	int num = 0, c = 0;
-	while (1) {
-		while ((c = getchar()) == ' ' || c == '\t');
-		if (c == '\n')break;
-		ungetc(c, stdin);
-		scanf("%d", &arr[num++]);
-	}
-	maopao(arr, num);
-	for (int i = 0; i < num; i++) {
-		printf("%d ", arr[i]);
-	}
-	return 0;
-}
+//#include<stdio.h>
+//void maopao(int arr[], int len) {
+//	int last = 0;
+//	int bord = len - 1;
+//	while(bord>0)
+//	 {
+//		int npc = 1;
+//		for (int j = 0; j < bord; j++) {
+//			if (arr[j] > arr[j + 1]) {
+//				int c = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = c;
+//				npc = 0;
+//				last = j;
+//			}
+//		}
+//		bord = last;
+//		if (npc == 1)break;
+//	}
+//}
+//int main() {
+//	int arr[100];
+//	int num = 0, c = 0;
+//	while (1) {
+//		while ((c = getchar()) == ' ' || c == '\t');
+//		if (c == '\n')break;
+//		ungetc(c, stdin);
+//		scanf("%d", &arr[num++]);
+//	}
+//	maopao(arr, num);
+//	for (int i = 0; i < num; i++) {
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
 
 //#include<stdio.h>
 //void maopao(int arr[], int len) {
@@ -900,3 +900,384 @@ int main() {
 //	}
 //	return 0;
 //}
+
+
+
+#include<stdio.h>
+//void maopao(int arr[], int len) {
+//	int right = len - 1;
+//	int left = 0;
+//	int last = 0;
+//	while(left<right) {
+//		int npc = 0;
+//		for (int j = 0; j < right; j++) {
+//			if (arr[j] > arr[j + 1]) {
+//				int c = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = c;
+//				npc = 1;
+//				last = j;
+//			}
+//		}
+//		right = last;
+//		for (int j = right; j >left; j--) {
+//			if (arr[j] < arr[j - 1]) {
+//				int c = arr[j];
+//				arr[j] = arr[j - 1];
+//				arr[j - 1] = c;
+//				npc = 1;
+//				last = j;
+//			}
+//		}
+//		left=last;
+//		if (npc == 0)break;
+//	}
+//}
+
+//#include<stdio.h>
+//#include<string.h>
+//void zuoxuan(char arr[],int n,int m) {
+//	while (n < m) {
+//		char c = arr[n];
+//		arr[n] = arr[m];
+//		arr[m] = c;
+//		m--;
+//		n++;
+//	}
+//}
+//
+//int main() {
+//	char arr[100];
+//	int i = 0;
+//	int n;
+//	printf("输入一段字符：");
+//	while ((arr[i] = getchar()) != '\n')i++;
+//	arr[i] = '\0';
+//	printf("输入你要左旋的个数：");
+//	scanf("%d", &n);
+//	int len = strlen(arr);
+//	zuoxuan(arr, 0, n-1);
+//	zuoxuan(arr,n, len - 1);
+//	zuoxuan(arr,0, len - 1);
+//	printf("%s\n", arr);
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<string.h>
+//void zuoxuan(char arr[],int n,int m) {
+//	while (n < m) {
+//	char c = arr[n];
+//	arr[n] = arr[m];
+//	arr[m] = c;
+//	n++;
+//	m--;
+//	}
+//}
+//int main() {
+//	char arr[1000];
+//	printf("输入一段字符：");
+//	int i = 0;
+//	while ((arr[i] = getchar()) != '\n')i++;
+//	arr[i] = '\0';
+//	int len = strlen(arr);
+//	printf("输入你要左旋的字符个数：");
+//	int n;
+//	scanf("%d", &n);
+//	zuoxuan(arr, 0, n - 1);
+//	zuoxuan(arr, n, len - 1);
+//	zuoxuan(arr, 0, len - 1);
+//	printf("%s", arr);
+//	return 0;
+//}	
+
+
+
+//#include<stdio.h>
+//void jiou(int arr[], int len) {
+//	int left = 0;
+//	int right = len - 1;
+//	while (left < right) {
+//		while (arr[left] % 2 == 1&& left < right)left++;
+//		while (arr[right] % 2 ==0&& left < right)right--;
+//		int c = arr[left];
+//		arr[left] = arr[right];
+//		arr[right] = c;
+//		left++;
+//		right--;
+//	}
+//}
+//int main() {
+//	int c,num = 0;
+//	int arr[1000];
+//	while (1) {
+//		while ((c = getchar()) == ' ' || c=='\t');
+//		if (c == '\n')break;
+//		ungetc(c, stdin);
+//		scanf("%d", &arr[num++]);
+//	}
+//	jiou(arr, num);
+//	for (int i = 0; i < num; i++) {
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//int main() {
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int* p = arr;
+//	int len = sizeof(arr) / sizeof(arr[0]);
+//	while (p<arr+len) {
+//		printf("%d ", *(p++));
+//	}
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//void maopao(int arr[], int len) {
+//	int left = 0;
+//	int right = len - 1;
+//	int last = len-1;
+//	while (left < right) {
+//		int npc = 0;
+//		for (int i = left; i < right; i++) {
+//		if (arr[i] > arr[i + 1]) {
+//			int c = arr[i];
+//			arr[i] = arr[i + 1];
+//			arr[i + 1] = c;
+//			npc = 1;
+//			last = i;
+//		}
+//		}
+//		left=last;
+//		for (int i = right; i > left; i--) {
+//			if (arr[i-1] > arr[i]) {
+//				int c = arr[i];
+//				arr[i-1] = arr[i];
+//				arr[i] = c;
+//				npc = 1;
+//				last = i;
+//			}
+//		}
+//		right=last;
+//		if (npc == 0)break;
+//	}
+//}
+//int main() {
+//	int arr[1000];
+//	int c = 0, num = 0;
+//	while (1) {
+//		while ((c = getchar()) == ' ' || c == '\t');
+//		if (c == '\n')break;
+//		ungetc(c, stdin);
+//		scanf("%d", &arr[num++]);
+//	}
+//	maopao(arr, num);
+//	for (int i = 0; i < num; i++) {
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//#include<string.h>
+//void zuoxuan(char arr[], int n, int m) {
+//	while (n < m) {
+//		char c = arr[n];
+//		arr[n] = arr[m];
+//		arr[m] = c;
+//		n++;
+//		m--;
+//	}
+//}
+//int if_zuoxuan(char arr1[],char arr2[], int len) {
+//	int i = 0;
+//	char arr3[1000];
+//	
+//	while (i < len) {
+//	strcpy(arr3, arr1);
+//    zuoxuan(arr3, 0, i);
+//	zuoxuan(arr3, i, len - 1);
+//	zuoxuan(arr3, 0, len - 1);
+//	i++;
+//	if (strcmp(arr3, arr2) == 0) {
+//		return 1;
+//	}
+//	}
+//	if (strcmp(arr3, arr2) != 0)
+//		return 0;
+//}
+//int main() {
+//	char arr1[1000];
+//	char arr2[1000];
+//	printf("输入字符串1：");
+//	int i = 0;
+//	while ((arr1[i] = getchar()) != '\n')i++;
+//	arr1[i] = '\0';
+//	int len1 = strlen(arr1);
+//	printf("输入字符串2：");
+//	int j = 0;
+//	while ((arr2[j] = getchar()) != '\n')j++;
+//	arr2[j] = '\0';
+//	int len2 = strlen(arr2);
+//	int c = if_zuoxuan(arr1, arr2, len1);
+//	if (c == 0)printf("字符串1不是由字符串2旋转得到\n");
+//	else
+//		printf("字符串1是由字符串2旋转得到\n");
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//#include<string.h>
+//int if_zuoxuan(char arr1[], char arr2[]) {
+//	char c[1000];
+//	strcpy(c, arr1);
+//	strcat(c, c);
+//	if (strstr(c, arr2) != NULL)return 1;
+//	else return 0;
+//}
+//int main() {
+//	char arr1[1000];
+//	char arr2[1000];
+//	printf("输入字符串1：");
+//	int i = 0;
+//	while ((arr1[i] = getchar()) != '\n')i++;
+//	arr1[i] = '\0';
+//	printf("输入字符串2：");
+//	int j = 0;
+//	while ((arr2[j] = getchar()) != '\n')j++;
+//	arr2[j] = '\0';
+//	int c = if_zuoxuan(arr1, arr2);
+//	if (c == 0)printf("字符串1不是由字符串2旋转得到\n");
+//	else
+//		printf("字符串1是由字符串2旋转得到\n");
+//	return 0;
+//}
+
+////左旋函数
+//void zuoxuan(char arr1[],char arr2[],int num) {
+//	char a[1000];
+//	strcpy(a, arr1+num);
+//	strncat(a, arr1, num);
+//}
+
+
+
+
+
+//int chazhao(int arr[][10], int row, int col,int num) {
+//	int x = 0;
+//	int y = col - 1;
+//	while (x < row && y >= 0) {
+//		if (arr[x][y] == num) {
+//			return 0;
+//		}
+//	else if (arr[x][y] < num)
+//		x++;
+//	else
+//		y--;
+//}
+//	return 1;
+//}
+//
+//#include<stdio.h>
+//int main() {
+//	int arr[5][5] = {1,2,3,4,5,
+//					 2,3,4,5,6,
+//					 5,6,8,9,10,
+//	                 7,12,14,16,17,
+//					 8,24,35,53,64};
+//	int num;
+//	printf("输入你要查找的数字:");
+//	scanf("%d", &num);
+//	int c=chazhao(arr, 5, 5, num);
+//	if (c == 0)printf("找到了\n");
+//	else printf("没找到\n");
+//	return 0;
+//}
+
+//#include<stdio.h>
+//int main() {
+//	char killer = 0;
+//	for (killer = 'a'; killer <= 'b'; killer++) {
+//	int A = (killer!='a');
+//	int B = (killer == 'c');
+//	int C = (killer == 'd');
+//	int D = (killer != 'd');
+//	if ((A + B + C + D) == 3) {
+//			printf("killer=%c", killer);
+//			break;
+//		}
+//	}
+//	return 0;
+//}
+//#include<stdio.h>
+//int main() {
+//	char killer = 0;
+//	for (killer = 'a'; killer <= 'e'; killer++) {
+//	int A = (killer=='c');
+//	int B = (killer != 'b');
+//	int C = (killer == 'e');
+//	int D = (killer != 'c');
+//	int E = (killer != 'b');
+//	if ((A + B + C + D+E) == 3) {
+//			printf("killer=%c", killer);
+//			break;
+//		}
+//	}
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//#define n 10
+//int main() {
+//	int arr[n][n] = { 0 };
+//	int i, j;
+//	for (i = 0; i < n; i++) {
+//			arr[i][0] = 1;
+//			arr[i][i] = 1;
+//		for (j = 1; j <i; j++) {
+//			arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][j];
+//		}
+//	}
+//	for (int i = 0; i < n; i++) {
+//		for (int j = 0; j <= i; j++) {
+//			printf("%d ", arr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+#include<stdio.h>
+int danshegou(int *arr,int *s,int len) {
+	int num = 0;
+	for (int i = 0; i < len; i++) {
+		int count = 0;
+		for (int j = 0; j < len; j++) {
+			if (arr[i] == arr[j]) {
+				count++;
+			}
+		}
+		if (count == 1) {
+			s[num++] = arr[i];
+		}
+	}
+	return num;
+}
+int main() {
+	int arr[] = { 1,2,3,4,5,1,2,3,4,6 };
+	int len = sizeof(arr) / sizeof(arr[0]);
+	int gou[1000];
+	int num=danshegou(arr, gou,len);
+	for (int i = 0; i < num; i++) {
+		printf("%d ", gou[i]);
+	}
+	return 0;
+}
