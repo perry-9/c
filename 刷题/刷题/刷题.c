@@ -1255,29 +1255,446 @@
 //	return 0;
 //}
 
+//#include<stdio.h>
+//int danshegou(int *arr,int *s,int len) {
+//	int num = 0;
+//	for (int i = 0; i < len; i++) {
+//		int count = 0;
+//		for (int j = 0; j < len; j++) {
+//			if (arr[i] == arr[j]) {
+//				count++;
+//			}
+//		}
+//		if (count == 1) {
+//			s[num++] = arr[i];
+//		}
+//	}
+//	return num;
+//}
+//int main() {
+//	int arr[] = { 1,2,3,4,5,1,2,3,4,6 };
+//	int len = sizeof(arr) / sizeof(arr[0]);
+//	int gou[1000];
+//	int num=danshegou(arr, gou,len);
+//	for (int i = 0; i < num; i++) {
+//		printf("%d ", gou[i]);
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+//int danshegou(int * arr,int *s,int len) {
+//	int num = 0;
+//	for (int i = 0; i < len; i++) {
+//		int count = 0;
+//		for (int j = 0; j < len; j++) {
+//			if (arr[i] == arr[j]) {
+//				count++;
+//			}
+//		}
+//		if (count == 1) {
+//			s[num++] = arr[i];
+//		}
+//	}
+//	return num;
+//}
+//int main() {
+//	int arr[] = { 1,2,3,4,5,1,2,3,4,6 };
+//	int len = sizeof(arr) / sizeof(arr[0]);
+//	int gou[100];
+//	int num=danshegou(arr, gou, len);
+//	for (int i = 0; i < num; i++) {
+//		printf("%d ", gou[i]);
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+//void danshegou(int* arr, int len, int* z, int* y) {
+//int a = 0;
+//	for (int i = 0; i < len; i++) {
+//		a = a ^ arr[i];
+//	}
+//	int mask = 1;
+//	while ((mask & a) == 0) {
+//		mask <<= 1;
+//	}
+//	for (int i = 0; i < len; i++) {
+//		if (arr[i] & mask) {
+//			*z ^= arr[i];
+//		}
+//		else
+//			*y ^= arr[i];
+//	}
+//}
+//	
+//int main() {
+//	int arr[] = { 1,2,3,4,5,1,2,3,4,6 };
+//	int len = sizeof(arr) / sizeof(arr[0]);
+//	int z=0, y=0;
+//	danshegou(arr, len, &z, &y);
+//	printf("%d %d", z, y);
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//int my_year(int year) {
+//    if (((year % 100 != 0) && (year % 4 == 0)) || (year % 400 == 0)) {
+//        return 1;
+//    }
+//    else {
+//        return 0;
+//    }
+//}
+//int day(int year, int month) {
+//    int num;
+//    int c = my_year(year);
+//    if (c == 1 && month == 2) {
+//        num = 29;
+//    }
+//    else if (c == 0 && month == 2) {
+//        num = 28;
+//    }
+//    else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 ||
+//        month == 10 || month == 12) {
+//        num = 31;
+//    }
+//    else {
+//        num = 30;
+//    }
+//    return num;
+//}
+//int main() {
+//    int year, month;
+//    while (scanf("%d %d", &year, &month) != EOF) {
+//        printf("%d", day(year, month));
+//    }
+//    
+//    return 0;
+//}
+
+//#include<stdio.h>
+//int main() {
+//	int arr[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+//	int year, month;
+//	while (scanf("%d %d", &year, &month) != EOF) {
+//		int day = 0;
+//		day = arr[month - 1];
+//		if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+//			if (month == 2) {
+//				day++;
+//			}
+//		}
+//		printf("%d\n", day);
+//	}
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//#include<string.h>
+//#include<stdlib.h>
+//int int_cmpsheng(const void *a,const void *b) {
+//	return *(int*)a - *(int*)b;
+//}
+//void int_print(int arr[], int len) {
+//	for (int i = 0; i < len; i++) {
+//		printf("%d ", arr[i]);
+//	}
+//	printf("\n");
+//}
+//int int_cmpjiang(const void* a, const void* b) {
+//	return* (int*)b - *(int*)a;
+//}
+//
+//int char_cmpsheng(const void*a,const void *b){
+//	return *(char*)a - *(char*)b;
+//}
+//int char_cmpjiang(const void*a,const void *b){
+//	return *(char*)b - *(char*)a;
+//}
+//void char_print(char arr[], int len) {
+//	for (int i = 0; i < len; i++) {
+//	printf("%c ", arr[i]);
+//	}
+//	printf("\n");
+//}
+//int str_cmp(const void* a, const void* b) {
+//	return strcmp(*(char**)a, *(char**)b);
+//}
+//void str_print(char* arr[], int len) {
+//	for (int i = 0; i < len; i++) {
+//		printf("%s ", arr[i]);
+//	}
+//	printf("\n");
+//}
+//int main() {
+//	int arr[] = { 12,42,421,52,21,55,8,523,810,215,63,21,89 };
+//	char arr2[] = "pangzheruishidashuaige";
+//	int len2 = strlen(arr2);
+//	int len1 = sizeof(arr) / sizeof(arr[0]);
+//	qsort(arr, len1, sizeof(int), int_cmpsheng);
+//	int_print(arr, len1);
+//	qsort(arr, len1, sizeof(int), int_cmpjiang);
+//	int_print(arr, len1);
+//	qsort(arr2, len2, sizeof(char), char_cmpsheng);
+//	char_print(arr2, len2);
+//	qsort(arr2, len2, sizeof(char), char_cmpjiang);
+//	char_print(arr2, len2);
+//	char* arr3[] = { "pang","zhe","rui","shi","da","shuai","ge" };
+//	int len3 = sizeof(arr3) / sizeof(arr3[0]);
+//	qsort(arr3, len3, sizeof(char*), str_cmp);
+//	str_print(arr3, len3);
+//	return 0;
+//}
+
+//#include<stdio.h>
+//int int_cmpsheng(const void *a,const void *b) {
+//	return *(int*)a - *(int*)b;
+//}
+//void int_print(int arr[], int len) {
+//	for (int i = 0; i < len; i++) {
+//		printf("%d ", arr[i]);
+//	}
+//	printf("\n");
+//}
+//int int_cmpjiang(const void* a, const void* b) {
+//	return* (int*)b - *(int*)a;
+//}
+//
+//void swap(char* a, char* b, int size) {
+//	for (int i = 0; i < size; i++) {
+//		char c = *a;
+//		*a = *b;
+//		*b = c;
+//		a++;
+//		b++;
+//	}
+//}
+//void my_qsort(void* base, int len, int size, int (*cmp)(const void*, const void*)) {
+//	for (int i = 0; i < len-1; i++) {
+//		for (int j = 0; j < len - 1 - i; j++) {
+//			if ((cmp((char*)base + j * size, (char*)base + (j + 1) * size))>0) {
+//				swap((char*)base + j * size, (char*)base + (j + 1)*size,size);
+//			}
+//		}
+//	}
+//}
+//int main() {
+//	int arr[] = {1,24,21215,25,364,12,6,2,75,23,6424,156,21,57,235,12 };
+//	int len = sizeof(arr) / sizeof(arr[0]);
+//	my_qsort(arr, len, sizeof(int), int_cmpsheng);
+//	int_print(arr, len);
+//	my_qsort(arr, len, sizeof(int), int_cmpjiang);
+//	int_print(arr, len);
+//	return 0;
+//}
+
+////模拟实现strlen
+//#include<stdio.h>
+//int my_strlen(char *str){
+//	int count = 0;
+//	while (*str!='\0') {
+//		count++;
+//		str++;
+//	}
+//	return count;
+//}
+//int main() {
+//	char str[] = "pangzherui";
+//	int len = my_strlen(str);
+//	printf("%d\n", len);
+//	return 0;
+//}
+
+////模拟实现strcpy
+//#include<stdio.h>
+//#include<assert.h>
+//char* my_strcpy(char* arr1, const char* arr2) {
+//	assert(arr1 && arr2);
+//	char *ret = arr1;
+//	while (*arr1++ = *arr2++);
+//	return ret;
+//}
+//int main() {
+//	char arr1[100];
+//	char arr2[] = "pangzherui";
+//	printf("%s\n",my_strcpy(arr1, arr2));
+//	printf("%s\n", arr1);
+//}
+
+
+//模拟实现strcat
+//#include<stdio.h>
+//#include<assert.h>
+//char* my_strcat(char* arr1, const char* arr2) {
+//	assert(arr1 && arr2);
+//	char* ret = arr1;
+//	while (*arr1)arr1++;
+//	while ((*arr1++ = *arr2++));
+//	return ret;
+//}
+//int main() {
+//	char arr1[100]="pangzherui";
+//	char arr2[] = "shidashuaige";
+//	printf("%s\n",my_strcat(arr1, arr2));
+//	printf("%s\n", arr1);
+//}
+
+
+//模拟实现strstr
+//#include<stdio.h>
+//#include<assert.h>
+//char* my_strstr(const char* arr1, const char* arr2) {
+//	assert(arr1 && arr2);
+//	char* ret = arr1;
+//	if (!*arr2) {
+//		return (char*)arr1;
+//	}
+//	char* s1 = ret;
+//	char* s2 = (char *)arr2;
+//	while (*ret) {
+//		s1 = ret;
+//		s2 = arr2;
+//		while(*s1 && *s2 && !(*s1 - *s2)) {
+//			s1++;
+//			s2++;
+//		}
+//		if (!*s2) {
+//			return ret;
+//		}
+//		ret++;
+//	}
+//	return NULL;
+//}
+//int main() {
+//	char arr1[] = "pangzherui";
+//	char arr2[] = "z";
+//	printf("%s", my_strstr(arr1, arr2));
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<assert.h>
+//char* my_strstr(const char*arr1,const char*arr2){
+//	assert(arr1&&arr2);
+//	char* ret = (char*)arr1;
+//	if (!*arr2) {
+//		return ret;
+//	}
+//	while (*ret) {
+//		char* s1 = ret;
+//		char* s2 = (char*)arr2;
+//		while (*s1 && *s2 && !(*s1 - *s2)) {
+//			s1++;
+//			s2++;
+//			if (!*s2) {
+//				return ret;
+//			}
+//		}
+//		ret++;
+//	}
+//	return NULL;
+//}
+
+////模拟strcmp
+//#include<stdio.h>
+//#include<assert.h>
+//int my_strcmp(const char*arr1,const char*arr2) {
+//	assert(arr1&&arr2);
+//	while (*arr1 == *arr2) {
+//		if (!*arr2) {
+//			return 0;
+//		}
+//		arr1++;
+//		arr2++;
+//	}
+//	return *arr1 - *arr2;
+//}
+//int main() {
+//	printf("%d\n", my_strcmp("abc", "abc"));  // 0
+//	printf("%d\n", my_strcmp("abc", "abd"));  // 负
+//	printf("%d\n", my_strcmp("abc", "abb"));  // 正
+//}
+
+//模拟strncpy
+//#include<stdio.h>
+//#include<assert.h>
+//char* my_strncpy(char* arr1,const char* arr2,int len) {
+//	assert(arr1 && arr2);
+//	char* ret = arr1;
+//	int i = 0;
+//	for (;*arr2!='\0'&& i < len; i++) {
+//		*arr1 = *arr2;
+//		arr1++;
+//		arr2++;
+//	}
+//	while (i < len) {
+//		*arr1 = '\0';
+//		i++;
+//		arr1++;
+//	}
+//	return ret;
+//}
+//int main() {
+//	char str1[20] = "xxxxxxxxxx";
+//	my_strncpy(str1, "hello", 5);
+//	printf("%s\n", str1);  
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<assert.h>
+//char* my_strncat(char* arr1, const char* arr2, int len) {
+//	assert(arr1 && arr2);
+//	char* ret = arr1;
+//	while (*arr1) {
+//		arr1++;
+//	}
+//	int i = 0;
+//	for (; *arr2 != '\0' && i < len; i++) {
+//		*arr1 = *arr2;
+//		arr1++;
+//		arr2++;
+//	}
+//		*arr1 = '\0';
+//	return ret;
+//}
+//int main() {
+//	char str1[20] = "hello";
+//	my_strncat(str1, "world", 5);
+//	printf("%s\n", str1);  
+//	return 0;
+//}
+
+//模拟memcpy
+//#include<stdio.h>
+//#include<assert.h>
+//void* my_memcpy(void* arr1, const void* arr2, size_t n) {
+//	void* ret = arr1;
+//	for (int i = 0; i < n; i++) {
+//		*((char*)arr1)++ = *((char*)arr2)++;
+//	}
+//	return ret;
+//}
+//int main() {
+//	int a[] = { 1,2,3,4,5 };
+//	int b[10] = { 0 };
+//
+//	my_memcpy(b, a, 5 * sizeof(int));
+//
+//	for (int i = 0; i < 5; i++) {
+//		printf("%d ", b[i]);  
+//	}
+//}
+
 #include<stdio.h>
-int danshegou(int *arr,int *s,int len) {
-	int num = 0;
-	for (int i = 0; i < len; i++) {
-		int count = 0;
-		for (int j = 0; j < len; j++) {
-			if (arr[i] == arr[j]) {
-				count++;
-			}
-		}
-		if (count == 1) {
-			s[num++] = arr[i];
-		}
+#include<assert.h>
+void* my_memmove(void* arr1, void* arr2, size_t n) {
+	assert(arr1 && arr2);
+	void* ret = arr1;
+	if(arr1<=arr2||(char*)arr1>=(char*)arr2) {
+	
 	}
-	return num;
-}
-int main() {
-	int arr[] = { 1,2,3,4,5,1,2,3,4,6 };
-	int len = sizeof(arr) / sizeof(arr[0]);
-	int gou[1000];
-	int num=danshegou(arr, gou,len);
-	for (int i = 0; i < num; i++) {
-		printf("%d ", gou[i]);
-	}
-	return 0;
 }
