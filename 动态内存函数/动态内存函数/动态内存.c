@@ -133,25 +133,80 @@
 //}
 
 
+//#include<stdio.h>
+//union stu
+//{
+//	int i;
+//	char a;
+//}s;
+//int hanshu(){
+//if (s.a == 1) {
+//	return 1;
+//}
+//else
+//return 0;
+//}
+//int main() {
+//	s.i = 1;
+//	if (hanshu() == 1) {
+//		printf("小端\n");
+//	}
+//	else
+//		printf("大端\n");
+//	return 0;
+//}
+
+
+//#include<stdio.h>
+//int main() {
+//	int a, b;
+//	scanf("%d", &a);
+//	int arr[50];
+//	for (int i = 0; i < a; i++) {
+//		scanf("%d", &arr[i]);
+//	}
+//	scanf("%d", &b);
+//	for(int i=0;i<a;i++) {
+//		if (arr[i] != b) {
+//		printf("%d ", arr[i]);
+//		}
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<stdlib.h>
+//int main() {
+//	int* arr = (int*)malloc(10 * sizeof(int));
+//	if (arr == NULL) {
+//		perror("malloc");
+//		return 1;
+//	}
+//	else {
+//		for (int i = 0; i < 10; i++) {
+//			arr[i] = 1;
+//		}
+//	}
+//	free(arr);
+//	arr = NULL;
+//	return 0;
+//}
+//
+
 #include<stdio.h>
-union stu
-{
-	int i;
-	char a;
-}s;
-int hanshu(){
-if (s.a == 1) {
-	return 1;
-}
-else
-return 0;
-}
+#include<stdlib.h>
 int main() {
-	s.i = 1;
-	if (hanshu() == 1) {
-		printf("小端\n");
+	int* arr = (int*)calloc(10, sizeof(int));
+	if (arr == NULL) {
+		perror("calloc");
+		return 1;
 	}
-	else
-		printf("大端\n");
+	else {
+		for (int i = 0; i < 10; i++) {
+			printf("%d", *(arr + i));
+		}
+	}
+	free(arr);
+	arr = NULL;
 	return 0;
 }
