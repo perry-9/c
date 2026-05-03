@@ -193,20 +193,169 @@
 //}
 //
 
+//#include<stdio.h>
+//#include<stdlib.h>
+//int main() {
+//	int* arr = (int*)calloc(10, sizeof(int));
+//	if (arr == NULL) {
+//		perror("calloc");
+//		return 1;
+//	}
+//	else {
+//		for (int i = 0; i < 10; i++) {
+//			printf("%d ", *(arr + i));
+//		}
+//	}
+//	free(arr);
+//	arr = NULL;
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<stdlib.h>
+//void test() {
+//	int* arr = (int*)malloc(INT_MAX / 4);
+//	*arr = 20;
+//	free(arr);
+//	arr = NULL;
+//}
+
+//#include<stdio.h>
+//#include<stdlib.h>
+//int main() {
+//	int** arr = (int**)malloc(3 * sizeof(int*));
+//	for (int i = 0; i < 3; i++) {
+//		arr[i] = (int*)malloc(5 * sizeof(int));
+//	}
+//	for (int i = 0; i < 3; i++) {
+//		for (int j = 0; j < 5; j++) {
+//			arr[i][j] = i * j;
+//		}
+//	}
+//	for (int i = 0; i < 3; i++) {
+//		for (int j = 0; j < 5; j++) {
+//			printf("%d ", arr[i][j]);
+//		}
+//	}
+//	for (int i = 0; i < 3; i++) {
+//		free(arr[i]);
+//	}
+//	free(arr);
+//	arr = NULL;
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<stdlib.h>
+//int main() {
+//	int *arr = (int*)calloc(10 , sizeof(int));
+//	if (arr==NULL) {
+//		perror("calloc");
+//		return 1;
+//	}
+//	for (int i = 0; i < 10; i++) {
+//		arr[i] = 1;
+//	}
+//	int* p = (int*)realloc(arr, 20 * sizeof(int));
+//	arr = p;
+//	for (int i = 10; i < 20; i++) {
+//		arr[i] = 2;
+//	}
+//	printf("%d ", arr[2]);
+//	printf("%d ", arr[12]);
+//	free(arr);
+//	arr = NULL;
+//	return 0;
+//}
+////#include<stdio.h>
+////#include<stdlib.h>
+////int main() {
+////	int *arr = (int*)calloc(10 , sizeof(int));
+////	if (arr==NULL) {
+////		perror("calloc");
+////		return 1;
+////	}
+////	for (int i = 0; i < 10; i++) {
+////		arr[i] = 1;
+////	}
+////	printf("%d ", arr[2]);
+////	free(arr);
+////	arr = NULL;
+////	return 0;
+////}
+////#include<stdio.h>
+////#include<stdlib.h>
+////int main() {
+////	int *arr = (int*)malloc(10 * sizeof(int));
+////	if (arr==NULL) {
+////		perror("malloc");
+////		return 1;
+////	}
+////	for (int i = 0; i < 10; i++) {
+////		arr[i] = 1;
+////	}
+////	printf("%d ", arr[2]);
+////	free(arr);
+////	arr = NULL;
+////	return 0;
+////}
+
+//#include<stdio.h>
+//#include<stdlib.h>
+//int main() {
+//	int row=3;
+//	int col=5;
+//	int* arr = (int*)malloc(row * col * sizeof(int));
+//	if (arr ==NULL) {
+//		perror("malloc");
+//		return 1;
+//	}
+//	for (int i = 0; i < row; i++) {
+//		for (int j = 0; j < col; j++) {
+//			arr[i * col + j] = 1;
+//		}
+//	}
+//	for (int i = 0; i < row; i++) {
+//		for (int j = 0; j < col; j++) {
+//			printf("%d", arr[i * col + j]);
+//		}
+//	}
+//	free(arr);
+//	arr = NULL;
+//	return 0;
+//}
+
 #include<stdio.h>
 #include<stdlib.h>
 int main() {
-	int* arr = (int*)calloc(10, sizeof(int));
+	int** arr = (int**)malloc(3 * sizeof(int*));
 	if (arr == NULL) {
-		perror("calloc");
+		perror("malloc");
 		return 1;
 	}
-	else {
-		for (int i = 0; i < 10; i++) {
-			printf("%d", *(arr + i));
+	for (int i = 0; i < 3; i++) {
+		arr[i] = (int*)malloc(5 * sizeof(int));
+		if (arr[i] == NULL) {
+			perror("malloc");
+			return 1;
 		}
 	}
-	free(arr);
-	arr = NULL;
-	return 0;
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 5; j++) {
+				arr[i][j] = i*j+j;
+			}
+		}
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 5; j++) {
+				printf("%d ", arr[i][j]);
+			}
+			printf("\n");
+		}
+		for (int i = 0; i < 3; i++) {
+				free(arr[i]);
+				arr[i] = NULL;
+		}
+		free(arr);
+		arr = NULL;
+		return 0;
 }
