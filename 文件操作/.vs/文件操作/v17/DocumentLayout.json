@@ -1,0 +1,45 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\c\u8BED\u8A00\u4EE3\u7801git\u4ED3\u5E93\\c\u8BED\u8A00\u4EE3\u7801git\u4ED3\u5E93\\dream begin\\\u6587\u4EF6\u64CD\u4F5C\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6DE804FC-243F-406A-92BD-243D636BE00A}|\u6587\u4EF6\u64CD\u4F5C\\\u6587\u4EF6\u64CD\u4F5C.vcxproj|D:\\c\u8BED\u8A00\u4EE3\u7801git\u4ED3\u5E93\\c\u8BED\u8A00\u4EE3\u7801git\u4ED3\u5E93\\dream begin\\\u6587\u4EF6\u64CD\u4F5C\\\u6587\u4EF6\u64CD\u4F5C\\\u6587\u4EF6\u64CD\u4F5C.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{6DE804FC-243F-406A-92BD-243D636BE00A}|\u6587\u4EF6\u64CD\u4F5C\\\u6587\u4EF6\u64CD\u4F5C.vcxproj|solutionrelative:\u6587\u4EF6\u64CD\u4F5C\\\u6587\u4EF6\u64CD\u4F5C.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "\u6587\u4EF6\u64CD\u4F5C.c",
+              "DocumentMoniker": "D:\\c\u8BED\u8A00\u4EE3\u7801git\u4ED3\u5E93\\c\u8BED\u8A00\u4EE3\u7801git\u4ED3\u5E93\\dream begin\\\u6587\u4EF6\u64CD\u4F5C\\\u6587\u4EF6\u64CD\u4F5C\\\u6587\u4EF6\u64CD\u4F5C.c",
+              "RelativeDocumentMoniker": "\u6587\u4EF6\u64CD\u4F5C\\\u6587\u4EF6\u64CD\u4F5C.c",
+              "ToolTip": "D:\\c\u8BED\u8A00\u4EE3\u7801git\u4ED3\u5E93\\c\u8BED\u8A00\u4EE3\u7801git\u4ED3\u5E93\\dream begin\\\u6587\u4EF6\u64CD\u4F5C\\\u6587\u4EF6\u64CD\u4F5C\\\u6587\u4EF6\u64CD\u4F5C.c",
+              "RelativeToolTip": "\u6587\u4EF6\u64CD\u4F5C\\\u6587\u4EF6\u64CD\u4F5C.c",
+              "ViewState": "AgIAAIEBAAAAAAAAAAAAAJIBAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-05-03T03:35:13.203Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
